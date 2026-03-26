@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Assignment</string>
+
+    <!-- Login Page -->
+    <string name="login_title">Welcome Back</string>
+    <string name="login_subtitle">Sign in to continue</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="btn_login">Sign In</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="or_continue_with">Or continue with</string>
+    <string name="no_account">Don\'t have an account? </string>
+    <string name="sign_up"> Sign Up</string>
+    <string name="google">Google</string>
+    <string name="facebook">Facebook</string>
+
+    <!-- Validation Messages -->
+    <string name="error_username_empty">Username cannot be empty</string>
+    <string name="error_username_short">Username must be at least 4 characters</string>
+    <string name="error_password_empty">Password cannot be empty</string>
+    <string name="error_password_short">Password must be at least 6 characters</string>
+    <string name="login_success">Login successful! Welcome back 🎉</string>
+    <string name="login_failed">Invalid username or password</string>
+</resources>

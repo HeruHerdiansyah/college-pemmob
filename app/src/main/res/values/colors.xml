@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Login Page Colors -->
+    <color name="bg_dark_primary">#1A1A2E</color>
+    <color name="bg_dark_secondary">#16213E</color>
+    <color name="bg_dark_tertiary">#0F3460</color>
+    <color name="accent_red">#E94560</color>
+    <color name="accent_red_dark">#C23152</color>
+    <color name="card_bg">#1A2744</color>
+    <color name="card_border">#2A3F5F</color>
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#7A8BA8</color>
+    <color name="text_hint">#4A5B78</color>
+    <color name="input_bg">#1A2744</color>
+    <color name="error_red">#FF6B6B</color>
+    <color name="success_green">#2ED573</color>
+    <color name="divider">#2A3F5F</color>
+</resources>
