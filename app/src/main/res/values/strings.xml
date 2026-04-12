@@ -1,24 +1,71 @@
 <resources>
-    <string name="app_name">Assignment</string>
+    <string name="app_name">Smart Zoo</string>
+
+    <!-- Splash Screen -->
+    <string name="splash_title">Smart Zoo</string>
+    <string name="splash_subtitle">Management System</string>
+    <string name="splash_loading">Memuat…</string>
 
     <!-- Login Page -->
-    <string name="login_title">Welcome Back</string>
-    <string name="login_subtitle">Sign in to continue</string>
+    <string name="login_welcome">Selamat Datang</string>
+    <string name="login_title">Selamat Datang</string>
+    <string name="login_subtitle">Masuk ke akun Anda</string>
     <string name="hint_username">Username</string>
     <string name="hint_password">Password</string>
-    <string name="btn_login">Sign In</string>
-    <string name="forgot_password">Forgot Password?</string>
-    <string name="or_continue_with">Or continue with</string>
-    <string name="no_account">Don\'t have an account? </string>
-    <string name="sign_up"> Sign Up</string>
-    <string name="google">Google</string>
-    <string name="facebook">Facebook</string>
+    <string name="btn_login">Masuk</string>
+    <string name="no_account">Belum punya akun? </string>
+    <string name="sign_up">Daftar di sini</string>
+    <string name="logging_in">Memproses…</string>
 
-    <!-- Validation Messages -->
-    <string name="error_username_empty">Username cannot be empty</string>
-    <string name="error_username_short">Username must be at least 4 characters</string>
-    <string name="error_password_empty">Password cannot be empty</string>
-    <string name="error_password_short">Password must be at least 6 characters</string>
-    <string name="login_success">Login successful! Welcome back 🎉</string>
-    <string name="login_failed">Invalid username or password</string>
+    <!-- Login Validation (sama persis dengan Java) -->
+    <string name="error_login_empty">Username dan password harus diisi!</string>
+    <string name="error_login_failed">Username atau password salah!</string>
+    <string name="error_role_unknown">Role tidak dikenali!</string>
+
+    <!-- Register Page -->
+    <string name="register_title">Buat Akun Baru</string>
+    <string name="register_subtitle">Daftar untuk memulai</string>
+    <string name="hint_full_name">Nama Lengkap</string>
+    <string name="hint_confirm_password">Konfirmasi Password</string>
+    <string name="hint_select_role">Pilih role Anda</string>
+    <string name="btn_register">Daftar</string>
+    <string name="has_account">Sudah punya akun? </string>
+    <string name="sign_in">Masuk di sini</string>
+    <string name="registering">Mendaftar…</string>
+
+    <!-- Register Validation (sama persis dengan Java) -->
+    <string name="error_register_empty">Semua field harus diisi!</string>
+    <string name="error_role_null">Pilih role terlebih dahulu!</string>
+    <string name="error_password_mismatch">Password dan konfirmasi password tidak cocok!</string>
+    <string name="error_password_short">Password minimal 4 karakter!</string>
+    <string name="error_username_taken">Username sudah digunakan! Pilih username lain.</string>
+    <string name="register_success">Registrasi berhasil! Silakan login.</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_welcome">Selamat Datang, %1$s!</string>
+    <string name="dashboard_menu">Menu</string>
+    <string name="dashboard_stats">Statistik</string>
+    <string name="dashboard_quick_menu">Menu Utama</string>
+    <string name="coming_soon">Fitur segera hadir!</string>
+    <string name="btn_logout">Logout</string>
+
+    <!-- Profile -->
+    <string name="profile_title">Profil Saya</string>
+    <string name="profile_info">Informasi Akun</string>
+    <string name="profile_full_name">Nama Lengkap</string>
+    <string name="profile_username">Username</string>
+    <string name="profile_role">Role</string>
+    <string name="profile_change_password">Ganti Password</string>
+    <string name="hint_old_password">Password Lama</string>
+    <string name="hint_new_password">Password Baru</string>
+    <string name="hint_confirm_new_password">Konfirmasi Password Baru</string>
+    <string name="btn_change_password">Ubah Password</string>
+    <string name="changing_password">Mengubah…</string>
+
+    <!-- Profile Validation -->
+    <string name="error_change_password_empty">Semua field harus diisi!</string>
+    <string name="error_old_password_wrong">Password lama salah!</string>
+    <string name="error_new_password_short">Password baru minimal 4 karakter!</string>
+    <string name="error_new_password_mismatch">Password baru dan konfirmasi tidak cocok!</string>
+    <string name="change_password_success">Password berhasil diubah!</string>
 </resources>

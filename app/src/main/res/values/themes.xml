@@ -1,14 +1,15 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.Assignment" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Status bar and navigation bar colors -->
+    <style name="Theme.Assignment" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/accent_emerald</item>
+        <item name="colorPrimaryDark">@color/accent_emerald_dark</item>
+        <item name="colorAccent">@color/accent_emerald</item>
         <item name="android:statusBarColor">@color/bg_dark_primary</item>
         <item name="android:navigationBarColor">@color/bg_dark_primary</item>
-        <item name="android:windowLightStatusBar">false</item>
-        <item name="colorPrimary">@color/accent_red</item>
-        <item name="colorPrimaryVariant">@color/accent_red_dark</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:windowBackground">@color/bg_dark_primary</item>
     </style>
 
-    <style name="Theme.Assignment" parent="Base.Theme.Assignment" />
+    <!-- Splash Theme - fullscreen -->
+    <style name="Theme.Assignment.Splash" parent="Theme.Assignment">
+        <item name="android:windowFullscreen">true</item>
+    </style>
 </resources>
