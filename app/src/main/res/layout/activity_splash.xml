@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/splashMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    tools:context=".SplashActivity">
+
+    <!-- Decorative circles — same as login -->
+    <View
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="top|end"
+        android:background="@drawable/shape_circle_large"
+        android:translationX="70dp"
+        android:translationY="-50dp" />
+
+    <View
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_gravity="top|start"
+        android:background="@drawable/shape_circle_medium"
+        android:translationX="-50dp"
+        android:translationY="-40dp" />
+
+    <View
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_gravity="bottom|end"
+        android:background="@drawable/shape_circle_medium"
+        android:translationX="60dp"
+        android:translationY="50dp" />
+
+    <View
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="bottom|start"
+        android:background="@drawable/shape_circle_large"
+        android:translationX="-40dp"
+        android:translationY="40dp" />
+
+    <!-- Centered content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <!-- Zoo Logo -->
+        <ImageView
+            android:id="@+id/ivSplashLogo"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/ic_zoo_logo"
+            android:contentDescription="Zoo Logo" />
+
+        <!-- App Name -->
+        <TextView
+            android:id="@+id/tvSplashAppName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="@color/text_primary"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.05"
+            android:layout_marginTop="24dp" />
+
+        <!-- Tagline -->
+        <TextView
+            android:id="@+id/tvSplashTagline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/splash_tagline"
+            android:textColor="@color/text_secondary"
+            android:textSize="16sp"
+            android:letterSpacing="0.05"
+            android:layout_marginTop="8dp" />
+
+        <!-- Loading indicator -->
+        <ProgressBar
+            android:id="@+id/loadingIndicator"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="48dp"
+            android:indeterminateTint="@color/accent_red" />
+
+    </LinearLayout>
+
+</FrameLayout>

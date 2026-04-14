@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_gradient"
     android:clipChildren="false"
-    tools:context=".MainActivity">
+    tools:context=".LoginActivity">
 
     <!-- ═══ Decorative Round Shapes (behind content) ═══ -->
 
@@ -67,7 +67,7 @@
             android:id="@+id/ivLogo"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:src="@mipmap/ic_launcher_round"
+            android:src="@drawable/ic_zoo_logo"
             android:contentDescription="App Logo"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@id/tvTitle"
@@ -125,7 +125,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Username"
+                android:text="@string/label_username"
                 android:textColor="@color/text_secondary"
                 android:textSize="13sp"
                 android:letterSpacing="0.1"
@@ -169,7 +169,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Password"
+                android:text="@string/label_password"
                 android:textColor="@color/text_secondary"
                 android:textSize="13sp"
                 android:letterSpacing="0.1"
@@ -261,7 +261,20 @@
 
         </LinearLayout>
 
-        <!-- Divider with "Or continue with" -->
+        <!-- Loading overlay -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:visibility="gone"
+            android:indeterminateTint="@color/accent_red"
+            android:elevation="20dp"
+            app:layout_constraintTop_toTopOf="@id/cardLogin"
+            app:layout_constraintBottom_toBottomOf="@id/cardLogin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Divider with "Atau masuk dengan" -->
         <LinearLayout
             android:id="@+id/dividerContainer"
             android:layout_width="0dp"

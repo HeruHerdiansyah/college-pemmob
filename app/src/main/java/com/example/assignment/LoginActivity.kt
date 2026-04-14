@@ -2,6 +2,7 @@ package com.example.assignment
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
+import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
 import android.view.View
@@ -10,31 +11,31 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.assignment.service.AuthService
+import com.example.assignment.util.SessionManager
 
-class MainActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
 
     private lateinit var etUsername: EditText
     private lateinit var etPassword: EditText
     private lateinit var btnLogin: Button
     private lateinit var ivTogglePassword: ImageView
     private lateinit var tvError: TextView
+    private lateinit var progressBar: ProgressBar
 
     private var isPasswordVisible = false
-
-    // Simple credentials for validation
-    private val validUsername = "admin"
-    private val validPassword = "123456"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_login)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -49,12 +50,27 @@ class MainActivity : AppCompatActivity() {
         playEntryAnimations()
     }
 
+    @Suppress("DEPRECATION")
+    override fun onBackPressed() {
+        // Block back button — user cannot go back to splash
+        finishAffinity()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // Reset fields & error when returning from Register
+        etUsername.text.clear()
+        etPassword.text.clear()
+        hideError()
+    }
+
     private fun initViews() {
         etUsername = findViewById(R.id.etUsername)
         etPassword = findViewById(R.id.etPassword)
         btnLogin = findViewById(R.id.btnLogin)
         ivTogglePassword = findViewById(R.id.ivTogglePassword)
         tvError = findViewById(R.id.tvError)
+        progressBar = findViewById(R.id.progressBar)
     }
 
     private fun setupListeners() {
@@ -75,51 +91,60 @@ class MainActivity : AppCompatActivity() {
         etPassword.setOnFocusChangeListener { _, hasFocus ->
             if (hasFocus) hideError()
         }
+
+        // Forgot Password — decorative
+        findViewById<TextView>(R.id.tvForgotPassword).setOnClickListener {
+            Toast.makeText(this, "Fitur belum tersedia", Toast.LENGTH_SHORT).show()
+        }
+
+        // Social Login — decorative
+        findViewById<LinearLayout>(R.id.btnGoogle).setOnClickListener {
+            Toast.makeText(this, "Fitur belum tersedia", Toast.LENGTH_SHORT).show()
+        }
+        findViewById<LinearLayout>(R.id.btnFacebook).setOnClickListener {
+            Toast.makeText(this, "Fitur belum tersedia", Toast.LENGTH_SHORT).show()
+        }
+
+        // Sign Up → RegisterActivity
+        findViewById<TextView>(R.id.tvSignUp).setOnClickListener {
+            startActivity(Intent(this, RegisterActivity::class.java))
+        }
     }
 
     private fun performLogin() {
         val username = etUsername.text.toString().trim()
         val password = etPassword.text.toString().trim()
 
-        // Validate username
-        when {
-            username.isEmpty() -> {
-                showError(getString(R.string.error_username_empty))
-                shakeView(etUsername.parent as View)
-                return
-            }
-            username.length < 4 -> {
-                showError(getString(R.string.error_username_short))
-                shakeView(etUsername.parent as View)
-                return
-            }
+        // Validate — empty check
+        if (username.isEmpty() || password.isEmpty()) {
+            showError(getString(R.string.error_fields_empty))
+            shakeView(findViewById(R.id.cardLogin))
+            return
         }
 
-        // Validate password
-        when {
-            password.isEmpty() -> {
-                showError(getString(R.string.error_password_empty))
-                shakeView(etPassword.parent as View)
-                return
-            }
-            password.length < 6 -> {
-                showError(getString(R.string.error_password_short))
-                shakeView(etPassword.parent as View)
-                return
-            }
-        }
+        // Show loading
+        setLoading(true)
 
-        // Check credentials
-        if (username == validUsername && password == validPassword) {
-            onLoginSuccess()
-        } else {
-            showError(getString(R.string.login_failed))
-            shakeView(btnLogin)
-        }
+        // DB authentication on background thread
+        Thread {
+            val user = AuthService.authenticate(username, password)
+            runOnUiThread {
+                setLoading(false)
+                if (user != null) {
+                    onLoginSuccess(user)
+                } else {
+                    showError(getString(R.string.error_login_failed))
+                    shakeView(findViewById(R.id.cardLogin))
+                }
+            }
+        }.start()
     }
 
-    private fun onLoginSuccess() {
+    private fun onLoginSuccess(user: com.example.assignment.model.User) {
         hideError()
+
+        // Save session
+        SessionManager.login(user)
 
         // Success animation on button
         val scaleX = ObjectAnimator.ofFloat(btnLogin, "scaleX", 1f, 0.95f, 1.05f, 1f)
@@ -129,7 +154,21 @@ class MainActivity : AppCompatActivity() {
         animSet.duration = 400
         animSet.start()
 
-        Toast.makeText(this, getString(R.string.login_success), Toast.LENGTH_LONG).show()
+        Toast.makeText(this, getString(R.string.login_success), Toast.LENGTH_SHORT).show()
+
+        // Navigate to Dashboard
+        val intent = Intent(this, DashboardActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+        finish()
+    }
+
+    private fun setLoading(loading: Boolean) {
+        progressBar.visibility = if (loading) View.VISIBLE else View.GONE
+        btnLogin.isEnabled = !loading
+        btnLogin.alpha = if (loading) 0.6f else 1f
+        etUsername.isEnabled = !loading
+        etPassword.isEnabled = !loading
     }
 
     private fun togglePasswordVisibility() {

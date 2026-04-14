@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_stat_card"
+    android:padding="16dp"
+    android:layout_margin="5dp"
+    android:gravity="center"
+    android:elevation="4dp">
+
+    <!-- Icon circle -->
+    <FrameLayout
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="10dp">
+
+        <View
+            android:id="@+id/vIconBg"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_stat_icon_circle" />
+
+        <TextView
+            android:id="@+id/tvStatIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:textSize="18sp" />
+    </FrameLayout>
+
+    <!-- Label -->
+    <TextView
+        android:id="@+id/tvStatLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#7A8BA8"
+        android:textSize="11sp"
+        android:gravity="center"
+        android:maxLines="2"
+        android:ellipsize="end" />
+
+    <!-- Value -->
+    <TextView
+        android:id="@+id/tvStatValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginTop="4dp" />
+
+</LinearLayout>

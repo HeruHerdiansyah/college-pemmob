@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="220dp"
+    android:clipChildren="false">
+
+    <!-- Background gradient -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_nav_header" />
+
+    <!-- Decorative circle — top right -->
+    <View
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="top|end"
+        android:background="@drawable/shape_circle_large"
+        android:translationX="30dp"
+        android:translationY="-20dp" />
+
+    <!-- Decorative circle — bottom left -->
+    <View
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="bottom|start"
+        android:background="@drawable/shape_circle_medium"
+        android:translationX="-20dp"
+        android:translationY="20dp" />
+
+    <!-- Content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingBottom="20dp"
+        android:paddingTop="48dp">
+
+        <!-- Avatar with ring -->
+        <FrameLayout
+            android:layout_width="72dp"
+            android:layout_height="72dp">
+
+            <!-- Ring -->
+            <View
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:background="@drawable/bg_avatar_ring" />
+
+            <!-- Avatar -->
+            <TextView
+                android:id="@+id/tvNavAvatar"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_avatar_circle"
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+        <!-- Name -->
+        <TextView
+            android:id="@+id/tvNavName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp" />
+
+        <!-- Role Badge -->
+        <TextView
+            android:id="@+id/tvNavRole"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_role_badge"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="4dp"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+
+    <!-- Bottom divider line -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="bottom"
+        android:background="#2A3F5F" />
+
+</FrameLayout>

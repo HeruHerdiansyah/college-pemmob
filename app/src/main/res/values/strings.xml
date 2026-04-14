@@ -1,24 +1,86 @@
 <resources>
-    <string name="app_name">Assignment</string>
+    <string name="app_name">Smart Zoo</string>
+
+    <!-- Splash -->
+    <string name="splash_tagline">Sistem Manajemen Kebun Binatang</string>
 
     <!-- Login Page -->
-    <string name="login_title">Welcome Back</string>
-    <string name="login_subtitle">Sign in to continue</string>
-    <string name="hint_username">Username</string>
-    <string name="hint_password">Password</string>
-    <string name="btn_login">Sign In</string>
-    <string name="forgot_password">Forgot Password?</string>
-    <string name="or_continue_with">Or continue with</string>
-    <string name="no_account">Don\'t have an account? </string>
-    <string name="sign_up"> Sign Up</string>
+    <string name="login_title">Selamat Datang</string>
+    <string name="login_subtitle">Masuk untuk melanjutkan</string>
+    <string name="hint_username">Masukkan username</string>
+    <string name="hint_password">Masukkan password</string>
+    <string name="label_username">Username</string>
+    <string name="label_password">Password</string>
+    <string name="btn_login">Masuk</string>
+    <string name="forgot_password">Lupa Password?</string>
+    <string name="or_continue_with">Atau masuk dengan</string>
+    <string name="no_account">Belum punya akun? </string>
+    <string name="sign_up"> Daftar</string>
     <string name="google">Google</string>
     <string name="facebook">Facebook</string>
 
-    <!-- Validation Messages -->
-    <string name="error_username_empty">Username cannot be empty</string>
-    <string name="error_username_short">Username must be at least 4 characters</string>
-    <string name="error_password_empty">Password cannot be empty</string>
-    <string name="error_password_short">Password must be at least 6 characters</string>
-    <string name="login_success">Login successful! Welcome back 🎉</string>
-    <string name="login_failed">Invalid username or password</string>
+    <!-- Register Page -->
+    <string name="register_title">Buat Akun Baru</string>
+    <string name="register_subtitle">Daftar untuk memulai</string>
+    <string name="label_full_name">Nama Lengkap</string>
+    <string name="hint_full_name">Masukkan nama lengkap</string>
+    <string name="label_confirm_password">Konfirmasi Password</string>
+    <string name="hint_confirm_password">Ulangi password</string>
+    <string name="label_role">Role</string>
+    <string name="btn_register">Daftar</string>
+    <string name="has_account">Sudah punya akun? </string>
+    <string name="go_to_login"> Masuk di sini</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_stats">📊  Statistik</string>
+    <string name="dashboard_menu">📋  Menu</string>
+
+    <!-- Profile -->
+    <string name="profile_title">Profil Saya</string>
+    <string name="profile_account_info">Informasi Akun</string>
+    <string name="profile_change_password">Ganti Password</string>
+    <string name="label_old_password">Password Lama</string>
+    <string name="hint_old_password">Masukkan password lama</string>
+    <string name="label_new_password">Password Baru</string>
+    <string name="hint_new_password">Masukkan password baru</string>
+    <string name="label_confirm_new_password">Konfirmasi Password Baru</string>
+    <string name="hint_confirm_new_password">Ulangi password baru</string>
+    <string name="btn_change_password">Ubah Password</string>
+    <string name="btn_logout">Keluar</string>
+
+    <!-- Navigation -->
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_profile">Profil</string>
+    <string name="nav_logout">Keluar</string>
+    <string name="nav_group_role_menu">Menu %1$s</string>
+    <string name="nav_group_other">Lainnya</string>
+
+    <!-- Validation Messages — Login -->
+    <string name="error_fields_empty">Username dan password harus diisi!</string>
+    <string name="error_login_failed">Username atau password salah!</string>
+    <string name="login_success">Login berhasil! Selamat datang 🎉</string>
+
+    <!-- Validation Messages — Register -->
+    <string name="error_all_fields_required">Semua field harus diisi!</string>
+    <string name="error_username_min">Username minimal 4 karakter!</string>
+    <string name="error_select_role">Pilih role terlebih dahulu!</string>
+    <string name="error_password_mismatch">Password dan konfirmasi password tidak cocok!</string>
+    <string name="error_password_min">Password minimal 4 karakter!</string>
+    <string name="error_username_taken">Username sudah digunakan! Pilih username lain.</string>
+    <string name="register_success">Registrasi berhasil! Silakan login.</string>
+    <string name="error_register_failed">Registrasi gagal. Coba lagi.</string>
+
+    <!-- Validation Messages — Profile -->
+    <string name="error_old_password_wrong">Password lama salah!</string>
+    <string name="error_new_password_min">Password baru minimal 4 karakter!</string>
+    <string name="error_new_password_mismatch">Password baru dan konfirmasi tidak cocok!</string>
+    <string name="password_changed_success">Password berhasil diubah!</string>
+    <string name="error_change_password_failed">Gagal mengubah password. Coba lagi.</string>
+
+    <!-- Legacy (kept for compatibility, unused) -->
+    <string name="error_username_empty">Username tidak boleh kosong</string>
+    <string name="error_username_short">Username minimal 4 karakter</string>
+    <string name="error_password_empty">Password tidak boleh kosong</string>
+    <string name="error_password_short">Password minimal 6 karakter</string>
+    <string name="login_failed">Username atau password salah</string>
 </resources>

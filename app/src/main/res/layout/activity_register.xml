@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/registerMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    android:clipChildren="false"
+    tools:context=".RegisterActivity">
+
+    <!-- Decorative shapes — same as login -->
+    <View
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="top|end"
+        android:background="@drawable/shape_circle_large"
+        android:translationX="70dp"
+        android:translationY="-50dp" />
+    <View
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_gravity="top|start"
+        android:background="@drawable/shape_circle_medium"
+        android:translationX="-50dp"
+        android:translationY="-40dp" />
+    <View
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_gravity="bottom|end"
+        android:background="@drawable/shape_circle_medium"
+        android:translationX="60dp"
+        android:translationY="50dp" />
+    <View
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="bottom|start"
+        android:background="@drawable/shape_circle_large"
+        android:translationX="-40dp"
+        android:translationY="40dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="28dp"
+            android:paddingTop="40dp"
+            android:paddingBottom="20dp">
+
+            <!-- Logo -->
+            <ImageView
+                android:id="@+id/ivRegLogo"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:src="@drawable/ic_zoo_logo"
+                android:contentDescription="App Logo"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/tvRegTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/tvRegTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/register_title"
+                android:textColor="@color/text_primary"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.02"
+                app:layout_constraintTop_toBottomOf="@id/ivRegLogo"
+                app:layout_constraintBottom_toTopOf="@id/tvRegSubtitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="16dp" />
+
+            <!-- Subtitle -->
+            <TextView
+                android:id="@+id/tvRegSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/register_subtitle"
+                android:textColor="@color/text_secondary"
+                android:textSize="15sp"
+                android:letterSpacing="0.05"
+                app:layout_constraintTop_toBottomOf="@id/tvRegTitle"
+                app:layout_constraintBottom_toTopOf="@id/cardRegister"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="6dp" />
+
+            <!-- Register Card -->
+            <LinearLayout
+                android:id="@+id/cardRegister"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/bg_card_glass"
+                android:padding="24dp"
+                android:elevation="8dp"
+                app:layout_constraintTop_toBottomOf="@id/tvRegSubtitle"
+                app:layout_constraintBottom_toTopOf="@id/loginContainer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="24dp">
+
+                <!-- Full Name Label -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_full_name"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp"
+                    android:letterSpacing="0.1"
+                    android:textAllCaps="true"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Full Name Input -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/selector_input_field"
+                    android:paddingHorizontal="16dp"
+                    android:layout_marginBottom="16dp">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_person"
+                        android:contentDescription="Person Icon"
+                        android:layout_marginEnd="12dp" />
+
+                    <EditText
+                        android:id="@+id/etFullName"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:hint="@string/hint_full_name"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_hint"
+                        android:textSize="15sp"
+                        android:background="@android:color/transparent"
+                        android:inputType="textPersonName"
+                        android:maxLines="1"
+                        android:imeOptions="actionNext"
+                        android:importantForAutofill="no" />
+                </LinearLayout>
+
+                <!-- Username Label -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_username"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp"
+                    android:letterSpacing="0.1"
+                    android:textAllCaps="true"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Username Input -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/selector_input_field"
+                    android:paddingHorizontal="16dp"
+                    android:layout_marginBottom="16dp">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_user"
+                        android:contentDescription="User Icon"
+                        android:layout_marginEnd="12dp" />
+
+                    <EditText
+                        android:id="@+id/etRegUsername"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:hint="@string/hint_username"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_hint"
+                        android:textSize="15sp"
+                        android:background="@android:color/transparent"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:imeOptions="actionNext"
+                        android:importantForAutofill="no" />
+                </LinearLayout>
+
+                <!-- Password Label -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_password"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp"
+                    android:letterSpacing="0.1"
+                    android:textAllCaps="true"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Password Input -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/selector_input_field"
+                    android:paddingHorizontal="16dp"
+                    android:layout_marginBottom="16dp">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_lock"
+                        android:contentDescription="Lock Icon"
+                        android:layout_marginEnd="12dp" />
+
+                    <EditText
+                        android:id="@+id/etRegPassword"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:hint="@string/hint_password"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_hint"
+                        android:textSize="15sp"
+                        android:background="@android:color/transparent"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:imeOptions="actionNext"
+                        android:importantForAutofill="no" />
+
+                    <ImageView
+                        android:id="@+id/ivRegTogglePassword"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_eye_off"
+                        android:contentDescription="Toggle Password"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="1dp" />
+                </LinearLayout>
+
+                <!-- Confirm Password Label -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_confirm_password"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp"
+                    android:letterSpacing="0.1"
+                    android:textAllCaps="true"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Confirm Password Input -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/selector_input_field"
+                    android:paddingHorizontal="16dp"
+                    android:layout_marginBottom="16dp">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_lock"
+                        android:contentDescription="Lock Icon"
+                        android:layout_marginEnd="12dp" />
+
+                    <EditText
+                        android:id="@+id/etRegConfirmPassword"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:hint="@string/hint_confirm_password"
+                        android:textColor="@color/text_primary"
+                        android:textColorHint="@color/text_hint"
+                        android:textSize="15sp"
+                        android:background="@android:color/transparent"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:imeOptions="actionNext"
+                        android:importantForAutofill="no" />
+
+                    <ImageView
+                        android:id="@+id/ivRegToggleConfirm"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_eye_off"
+                        android:contentDescription="Toggle Confirm"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:padding="1dp" />
+                </LinearLayout>
+
+                <!-- Role Label -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/label_role"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="13sp"
+                    android:letterSpacing="0.1"
+                    android:textAllCaps="true"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Role Spinner (wrapped like other inputs) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/selector_input_field"
+                    android:paddingHorizontal="16dp"
+                    android:layout_marginBottom="8dp">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_role"
+                        android:contentDescription="Role Icon"
+                        android:layout_marginEnd="12dp" />
+
+                    <Spinner
+                        android:id="@+id/spinnerRole"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:popupBackground="@color/card_bg" />
+                </LinearLayout>
+
+                <!-- Error Message -->
+                <TextView
+                    android:id="@+id/tvRegError"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/error_red"
+                    android:textSize="13sp"
+                    android:visibility="gone"
+                    android:layout_marginTop="8dp" />
+
+                <!-- Success Message -->
+                <TextView
+                    android:id="@+id/tvRegSuccess"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/success_green"
+                    android:textSize="13sp"
+                    android:visibility="gone"
+                    android:layout_marginTop="8dp" />
+
+                <!-- Register Button -->
+                <Button
+                    android:id="@+id/btnRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="@string/btn_register"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.1"
+                    android:textAllCaps="false"
+                    android:background="@drawable/bg_button_login"
+                    android:stateListAnimator="@null"
+                    android:layout_marginTop="20dp" />
+
+            </LinearLayout>
+
+            <!-- Loading overlay -->
+            <ProgressBar
+                android:id="@+id/regProgressBar"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:visibility="gone"
+                android:indeterminateTint="@color/accent_red"
+                android:elevation="20dp"
+                app:layout_constraintTop_toTopOf="@id/cardRegister"
+                app:layout_constraintBottom_toBottomOf="@id/cardRegister"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- Login Link -->
+            <LinearLayout
+                android:id="@+id/loginContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/cardRegister"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="24dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/has_account"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tvGoToLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/go_to_login"
+                    android:textColor="@color/accent_red"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="4dp"
+                    android:clickable="true"
+                    android:focusable="true" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</FrameLayout>

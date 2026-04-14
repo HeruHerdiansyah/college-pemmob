@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+
+    <!-- Outer circle -->
+    <path
+        android:fillColor="#20E94560"
+        android:pathData="M60,60m-58,0a58,58 0,1 1,116 0a58,58 0,1 1,-116 0" />
+
+    <!-- Inner circle -->
+    <path
+        android:fillColor="#30E94560"
+        android:pathData="M60,60m-42,0a42,42 0,1 1,84 0a42,42 0,1 1,-84 0" />
+
+    <!-- Lion face simplified -->
+    <!-- Mane -->
+    <path
+        android:fillColor="#E94560"
+        android:pathData="M60,25c-19.33,0 -35,15.67 -35,35s15.67,35 35,35s35,-15.67 35,-35S79.33,25 60,25z" />
+
+    <!-- Face -->
+    <path
+        android:fillColor="#F5A623"
+        android:pathData="M60,32c-15.46,0 -28,12.54 -28,28s12.54,28 28,28s28,-12.54 28,-28S75.46,32 60,32z" />
+
+    <!-- Eyes -->
+    <path
+        android:fillColor="#1A1A2E"
+        android:pathData="M48,55c0,2.21 1.79,4 4,4s4,-1.79 4,-4s-1.79,-4 -4,-4S48,52.79 48,55z" />
+    <path
+        android:fillColor="#1A1A2E"
+        android:pathData="M64,55c0,2.21 1.79,4 4,4s4,-1.79 4,-4s-1.79,-4 -4,-4S64,52.79 64,55z" />
+
+    <!-- Nose -->
+    <path
+        android:fillColor="#C23152"
+        android:pathData="M56,63l4,5l4,-5z" />
+
+    <!-- Mouth -->
+    <path
+        android:strokeColor="#1A1A2E"
+        android:strokeWidth="2"
+        android:fillColor="#00000000"
+        android:pathData="M54,68q6,6 12,0" />
+</vector>

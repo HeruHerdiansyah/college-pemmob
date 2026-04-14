@@ -3,7 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <!-- Login Page Colors -->
+    <!-- Base Theme Colors -->
     <color name="bg_dark_primary">#1A1A2E</color>
     <color name="bg_dark_secondary">#16213E</color>
     <color name="bg_dark_tertiary">#0F3460</color>
@@ -18,4 +18,14 @@
     <color name="error_red">#FF6B6B</color>
     <color name="success_green">#2ED573</color>
     <color name="divider">#2A3F5F</color>
+
+    <!-- Role Accent Colors -->
+    <color name="role_admin">#E94560</color>
+    <color name="role_vet">#3B82F6</color>
+    <color name="role_keeper">#22C55E</color>
+    <color name="role_ticketing">#F59E0B</color>
+    <color name="role_researcher">#8B5CF6</color>
+
+    <!-- Danger -->
+    <color name="danger_red">#EF4444</color>
 </resources>
